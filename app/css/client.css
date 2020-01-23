@@ -1,0 +1,54 @@
+body { font-family: "Courier New", courier, sans-serif !important; font-size: .9em; background-color: black; color: lightgray; }
+table { width: 100%; border-collapse: collapse; }
+table .right { text-align: right; }
+th { text-align: left; color: white; cursor: ns-resize; }
+tr { cursor: pointer; border: 1px solid #222222 }
+a { color: lightsteelblue; }
+#header { padding-left: .5em; padding-right: .5em; clear: both; }
+#name { cursor: ew-resize; font-weight: bold; float: left; padding-top: .15em; padding-right: .4em; }
+#name.hover #clc { color: lightgray; }
+#name.hover #cll { color: gray; }
+#clc { color: gray; }
+#cll { color: lightgray; }
+#navs { float: left; cursor: pointer; }
+#favorites { float: left; padding-left: .7em; padding-right: .7em; }
+#searchEdit { float: left; padding-left: .3em; cursor: pointer; }
+#searchInput { float: left; margin-left: .3em; color: white; background-color: #333333; border: 1px solid #888888; border-radius: 2px; text-transform: uppercase; height: 1em; }
+#info { float: right; padding-top: .15em; }
+#main { padding: .5em; clear: both; }
+#list { width: 35%; float: left; height: 95vh; overflow: auto; }
+#chart { width: 65%; float: left; height: 95vh; }
+.dark { color: #333333; }
+.dark.favorited { color: yellow; }
+.hover { color: white; font-weight: bold; }
+.hover.edit { text-decoration: line-through; color: red; background-color: black; }
+.hover.active { color: yellow; background-color: black; }
+.hover.selected { background-color: #BBBBBB; }
+.selected { color: black; background-color: #999999; font-weight: bold; }
+.selected .green { color: darkgreen; }
+.selected .red { color: darkred; }
+.green { color: limegreen; }
+.red { color: red; }
+.asset { float: left; padding-left: .4em; padding-right: .4em; padding-top: .15em; }
+.favicon { padding-left: .25em; padding-right: .25em; }
+@media only screen and (max-width: 1300px) {
+	#list { width: 100%; height: 25vh; }
+	#chart { width: 100%; height: 70vh;}
+	#name { cursor: ns-resize; }
+}
+@media only screen and (min-width: 1500px) {
+	#list { width: 35%; }
+	#chart { width: 65%; }
+}
+@media only screen and (min-width: 1800px) {
+	#list { width: 28%; }
+	#chart { width: 72%; }
+}
+@media only screen and (min-width: 2500px) {
+	#list { width: 22%; }
+	#chart { width: 78%; }
+}
+@media only screen and (min-width: 3200px) {
+	#list { width: 15%; }
+	#chart { width: 85%; }
+}
