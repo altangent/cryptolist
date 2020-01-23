@@ -1,4 +1,4 @@
 # cryptolist
-Cryptolist is a charting front-end for Blocktap.io market data
+TradingView charts for Blocktap.io data
 
-To run locally requires a Blocktap.io API key 
+Blocktap.io API key in config/default.json must be set before starting server.
