@@ -1,6 +1,6 @@
 {
   "name": "Cryptolist",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Bitcoin and crypto markets prices and charts",
   "main": "server.js",
   "dependencies": {

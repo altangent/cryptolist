@@ -6,8 +6,10 @@ tr { cursor: pointer; border: 1px solid #222222 }
 a { color: lightsteelblue; }
 #header { padding-left: .5em; padding-right: .5em; clear: both; }
 #name { cursor: ew-resize; font-weight: bold; float: left; padding-top: .15em; padding-right: .4em; }
+#name.hover #blb { color: lightgray; }
 #name.hover #clc { color: lightgray; }
 #name.hover #cll { color: gray; }
+#blb { color: gray; }
 #clc { color: gray; }
 #cll { color: lightgray; }
 #navs { float: left; cursor: pointer; }

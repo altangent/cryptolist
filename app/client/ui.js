@@ -249,35 +249,37 @@ function createNavs () {
 	Object.keys(APP.assets).forEach(asset => {	
 		navs.appendChild(createNav(asset));
 	});
-
-	span = document.createElement("span");
-	span.id = "searchEdit";
-	span.appendChild(document.createTextNode("[+/-]"));
-	addHover(span);
-	span.onclick = function () { toggleSearch(this.id); };
-	navs.appendChild(span);
-
-	input.id = "searchInput";
-	input.type = "text";
-	input.hidden = true;
-	input.size = 3;
-	input.onkeydown = function (e) {
-		if(e.keyCode === 27) {
-			toggleSearch();
-			return;
-		}
-		if(e.keyCode !== 13) return;
-		e.preventDefault();
-
-		let asset = DOM.searchInput.value.toUpperCase();
-		subAsset(asset, function () {
-			renderNavs();
-			setCookie("assets", JSON.stringify(Object.keys(APP.assets)), 30);
-		});
-		toggleSearch();
-	};
-	navs.appendChild(input);
 	
+	if(location.hostname.includes("cryptolist.com")) {
+		span = document.createElement("span");
+		span.id = "searchEdit";
+		span.appendChild(document.createTextNode("[+/-]"));
+		addHover(span);
+		span.onclick = function () { toggleSearch(this.id); };
+		navs.appendChild(span);
+	
+		input.id = "searchInput";
+		input.type = "text";
+		input.hidden = true;
+		input.size = 3;
+		input.onkeydown = function (e) {
+			if(e.keyCode === 27) {
+				toggleSearch();
+				return;
+			}
+			if(e.keyCode !== 13) return;
+			e.preventDefault();
+
+			let asset = DOM.searchInput.value.toUpperCase();
+			subAsset(asset, function () {
+				renderNavs();
+				setCookie("assets", JSON.stringify(Object.keys(APP.assets)), 30);
+			});
+			toggleSearch();
+		};
+		navs.appendChild(input);
+	}
+
 	return navs;
 }
 
