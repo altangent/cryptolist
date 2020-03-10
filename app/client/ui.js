@@ -311,8 +311,10 @@ function updateList (update) {
 function renderNavs () {
 	DOM.header.replaceChild(createNavs(), DOM.navs);
 	DOM.navs = document.getElementById("navs");
-	DOM.searchEdit = document.getElementById("searchEdit");
-	DOM.searchInput = document.getElementById("searchInput");
+	if(location.hostname.includes("cryptolist.com")) {
+		DOM.searchEdit = document.getElementById("searchEdit");
+		DOM.searchInput = document.getElementById("searchInput");
+	}
 }
 
 function renderList () {

@@ -90,18 +90,19 @@ socket.on("init", function (instance) {
 	APP.instance = instance;	
 	APP.favorites = JSON.parse(APP.favorites);
 	
-	let assets = getCookie("assets") || "[]";
-	assets = JSON.parse(assets);
-
-	if(assets.length === 0 && location.hostname.includes("cryptolist.com")) {
+	if(location.hostname.includes("cryptolist.com")) {
 		document.getElementById("blb").hidden = true;
-		assets = ["BTC","ETH","XRP","BCHABC","USDT","BSV","LTC","EOS","BNB","XTZ","LINK","ADA","XLM","TRX","XMR","ETC"];
+		let assets = getCookie("assets") || "[]";
+		assets = JSON.parse(assets);
+		if(assets.length === 0) {
+			assets = ["BTC","ETH","XRP","BCHABC","USDT","BSV","LTC","EOS","BNB","XTZ","LINK","ADA","XLM","TRX","XMR","ETC"];
+		}
 	}
 	else {
 		document.getElementById("clc").hidden = true;
-		assets = ["BTC"];
+		let assets = ["BTC"];
 	}
-
+	
 	assets.forEach(nav => { 
 		subAsset(nav, renderNavs); 
 	});
