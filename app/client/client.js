@@ -93,7 +93,7 @@ socket.on("init", function (instance) {
 	let assets;
 
 	if(location.hostname.includes("cryptolist.com")) {
-		document.getElementById("blb").hidden = true;
+		document.getElementById("clc").hidden = false;
 		assets = getCookie("assets") || "[]";
 		assets = JSON.parse(assets);
 		if(assets.length === 0) {
@@ -101,7 +101,7 @@ socket.on("init", function (instance) {
 		}
 	}
 	else {
-		document.getElementById("clc").hidden = true;
+		document.getElementById("blb").hidden = false;
 		assets = ["BTC"];
 	}
 	
