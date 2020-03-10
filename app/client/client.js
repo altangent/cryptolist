@@ -90,9 +90,11 @@ socket.on("init", function (instance) {
 	APP.instance = instance;	
 	APP.favorites = JSON.parse(APP.favorites);
 	
+	let assets;
+
 	if(location.hostname.includes("cryptolist.com")) {
 		document.getElementById("blb").hidden = true;
-		let assets = getCookie("assets") || "[]";
+		assets = getCookie("assets") || "[]";
 		assets = JSON.parse(assets);
 		if(assets.length === 0) {
 			assets = ["BTC","ETH","XRP","BCHABC","USDT","BSV","LTC","EOS","BNB","XTZ","LINK","ADA","XLM","TRX","XMR","ETC"];
@@ -100,7 +102,7 @@ socket.on("init", function (instance) {
 	}
 	else {
 		document.getElementById("clc").hidden = true;
-		let assets = ["BTC"];
+		assets = ["BTC"];
 	}
 	
 	assets.forEach(nav => { 
