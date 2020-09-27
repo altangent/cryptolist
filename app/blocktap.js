@@ -25,7 +25,7 @@ query filtered ($symbols: [String]!) {
 		assetName
 		assetSymbol
 		marketCapRank
-		markets {
+		markets(filter:{ marketType: { _eq: Spot }}) {
 			marketSymbol
 			ticker {
 				lastPrice
